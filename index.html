@@ -7,9 +7,7 @@
  </head>
  <body>
 
-           
-
-
+<!--HTML form tag  -->
 <form>
     <p>Enter your gender:</p>
     <label for="id4">Gender:</label><br>
@@ -17,51 +15,60 @@
 
     <p>Enter your birth date:</p>
     <label for="id1">Day of birth:</label><br>
-    <input id="id1" type="number" min="1" max="31" required><br><br>
+    <input id="id1" type="number" placeholder="Date" min="1" max="31" required><br><br>
     <label for="id2">Month of birth:</label><br>
-    <input id="id2" type="number" min="1" max="12" required><br><br>
+    <input id="id2" type="number" placeholder="Month" min="1" max="12" required><br><br>
     <label for="id3">Year of birth:</label><br>
-    <input id="id3" type="number" min="00" max="99" required><br><br>
-<br>
+    <input id="id3" type="number" placeholder="Year (last 2 digits)" min="00" max="99" required><br><br>
+    <br>
 
-    <button onclick="myFunction()">Generate Name!</button>
+    <button id="btn" onclick="myFunction()">Generate Name!</button>
 
-    </form>
+</form>
 
     <p>If the date entered is incorrect, an error message will be displayed.</p>
 
 <p id="demo"></p>
 
 <script>
+
+   
         function myFunction() {
-
-    //validate data entered
-        var inpObj1 = document.getElementById("id1");
-        if (!inpObj1.checkValidity()) {
-            document.getElementById("demo").innerHTML = inpObj1.validationMessage;
+           let adddob = {
+             day : document.getElementById("id1"),
+             month : document.getElementById("id2"),
+             year : document.getElementById("id3"),
+            gender : document.getElementById("id4")
+           }
+            
+//validate data entered
+        
+        if (!day.checkValidity()) {
+            document.getElementById("demo").innerHTML = day.validationMessage;
         } else {
             document.getElementById("demo").innerHTML = "Input OK";
         } 
 
-        var inpObj2 = document.getElementById("id2");
-        if (!inpObj2.checkValidity()) {
-            document.getElementById("demo").innerHTML = inpObj2.validationMessage;
+        if (!month.checkValidity()) {
+            document.getElementById("demo").innerHTML = month.validationMessage;
         } else {
             document.getElementById("demo").innerHTML = "Input OK";
         } 
 
-        var inpObj3 = document.getElementById("id3");
-        if (!inpObj3.checkValidity()) {
-            document.getElementById("demo").innerHTML = inpObj3.validationMessage;
+        if (!year.checkValidity()) {
+            document.getElementById("demo").innerHTML = year.validationMessage;
         } else {
             document.getElementById("demo").innerHTML = "Input OK";
         } 
     //end of validate data entered
-        } 
-</script>
+    }
 
-        }
-        
+    let adddob= {day,month,year}
+    console.log(adddob);
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click',adddob)
+        })
 </script>
 
  </body>
