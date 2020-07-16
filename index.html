@@ -8,22 +8,34 @@
  <body>
 
            
-<p>Enter your birth date:</p>
 
-<input id="id1" type="number" min="1" max="31" required>
-<input id="id2" type="number" min="1" max="12" required>
-<input id="id3" type="number" min="00" max="99" required>
 
-<button onclick="myFunction()">OK</button>
+<form>
+    <p>Enter your gender:</p>
+    <label for="id4">Gender:</label><br>
+    <input id="id4" type="text" required><br><br>
 
-<p>If the date is less than 1 or greater than 31, an error message will be displayed.</p>
+    <p>Enter your birth date:</p>
+    <label for="id1">Day of birth:</label><br>
+    <input id="id1" type="number" min="1" max="31" required><br><br>
+    <label for="id2">Month of birth:</label><br>
+    <input id="id2" type="number" min="1" max="12" required><br><br>
+    <label for="id3">Year of birth:</label><br>
+    <input id="id3" type="number" min="00" max="99" required><br><br>
+<br>
+
+    <button onclick="myFunction()">Generate Name!</button>
+
+    </form>
+
+    <p>If the date entered is incorrect, an error message will be displayed.</p>
 
 <p id="demo"></p>
 
 <script>
         function myFunction() {
 
-            //validate data entered
+    //validate data entered
         var inpObj1 = document.getElementById("id1");
         if (!inpObj1.checkValidity()) {
             document.getElementById("demo").innerHTML = inpObj1.validationMessage;
@@ -44,7 +56,7 @@
         } else {
             document.getElementById("demo").innerHTML = "Input OK";
         } 
-            //end of validate data entered
+    //end of validate data entered
         } 
 </script>
 
