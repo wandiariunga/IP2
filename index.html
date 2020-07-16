@@ -32,16 +32,13 @@
 
 <script>
 
-   
-        function myFunction() {
-           let adddob = {
-             day : document.getElementById("id1"),
-             month : document.getElementById("id2"),
-             year : document.getElementById("id3"),
-            gender : document.getElementById("id4")
-           }
-            
 //validate data entered
+        var day = document.getElementById("id1");
+        var month = document.getElementById("id2");
+        var year = document.getElementById("id3");
+        var gender = document.getElementById("id4");
+
+        let profile = {day,month,year,gender};
         
         if (!day.checkValidity()) {
             document.getElementById("demo").innerHTML = day.validationMessage;
@@ -61,14 +58,21 @@
             document.getElementById("demo").innerHTML = "Input OK";
         } 
     //end of validate data entered
-    }
+    
 
-    let adddob= {day,month,year}
-    console.log(adddob);
 
+    function myFunction() {
+           
+   
+             
+           
+
+           localStorage.setItem("record", day);
+            console.log(localStorage.getItem("record"));
         document.addEventListener('DOMContentLoaded', ()=>{
-            document.getElementById('btn').addEventListener('click',adddob)
+            document.getElementById('btn').addEventListener('click',myFunction())
         })
+    }
 </script>
 
  </body>
