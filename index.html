@@ -34,7 +34,14 @@
 
 h1{
     padding-left: 10px;
-    color:rebeccapurple;;
+    color:rebeccapurple;
+    font-family: 'Roboto';
+}
+
+p{
+    padding-left: 20px;
+    font-size: medium;
+    color: rgb(77, 3, 28);
 }
 </style>
 
@@ -44,8 +51,8 @@ h1{
          <div class="master-hero">
 
 <h1 >Name Generator machine</h1>
+<p>The Name Generator Application uses an algorithim that ascribes a <strong>Akan name</strong> to the user once they input their birthday and gender information onto the form. Enter your information below and Click the submit button to see what your Akan name would be</p>
 
-<p id="demo"></p>
 <!--HTML form tag  -->
 
 <div class=main>
@@ -77,7 +84,7 @@ h1{
 
     <button id="btn"  class="btn btn-danger navbar-btn" type="submit">Generate Name!</button>
     <br><br>
-    <h6>If the date entered is incorrect, an error message will be displayed.</h6>
+    <h6><strong>If the date entered is incorrect, an error message will be displayed.</strong></h6>
 </form>
 </div>
 
@@ -121,31 +128,56 @@ h1{
 
     //dayOfWeek = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
        
-    let profiles = [];
-
-        const addProfile = (ev)=>{
-            ev.preventDefault();  //to stop the form submitting
-            let profile = {
+  
+        document.getElementById("btn").addEventListener("click", function(event){
+        event.preventDefault()
+        });
+        let profile = {
         one : document.getElementById("id1").value,
         two : document.getElementById("id2").value,
-            }
-            profiles.push(profile);
-            document.forms[0].reset(); // to clear the form for the next entries
+        }
+        console.log(profile);
+        alert("hi");
+       // let profiles = [];
+
+
+
+       // const addProfile = (ev)=>{
+         //   ev.preventDefault();  //to stop the form submitting
+           // let profile = {
+        //one : document.getElementById("id1").value,
+        //two : document.getElementById("id2").value,
+           // }
+          //  profiles.push(profile);
+            //document.forms[0].reset(); // to clear the form for the next entries
             //document.querySelector('form').reset();
 
             //for display purposes only
-            console.warn('added',{profiles} );
-            let pre = document.querySelector('#msg pre');
-            pre.textContent = '\n' + JSON.stringify(profiles, '\t', 2);
+          //  console.warn('added',{profiles} );
+           // let pre = document.querySelector('#msg pre');
+            //pre.textContent = '\n' + JSON.stringify(profiles, '\t', 2);
 
 
             //saving to localStorage
-            localStorage.setItem('MyProfileList', JSON.stringify(profiles) );
-        }
-        document.addEventListener('DOMContentLoaded', ()=>{
-            document.getElementById('btn').addEventListener('click', addProfile);
-        });
+            //localStorage.setItem('MyProfileList', JSON.stringify(profiles) );
+     //   }
+      //  document.addEventListener('DOMContentLoaded', ()=>{
+        //    document.getElementById('btn').addEventListener('click', addProfile);
+       // });
     
+
+
+//if (temperature < 0) {
+//  console.log("Brr! Don't freeze out there!");
+//} else if (temperature < 15) {
+//  console.log("Don't forget a jacket!");
+//} else if (temperature < 25) {
+//  console.log("Have a nice day :)");
+//} else {
+//  console.log("Keep cool today!");
+//}
+
+
 </script>
 
  </body>
