@@ -54,39 +54,47 @@ p{
 <p>The Name Generator Application uses an algorithim that ascribes a <strong>Akan name</strong> to the user once they input their birthday and gender information onto the form. Enter your information below and Click the submit button to see what your Akan name would be</p>
 
 <!--HTML form tag  -->
-
+<p id="demo"></p>
 <div class=main>
     <form>
       
         <div class="form-row">
             <div class="col-md-4 mb-3">
-        <label for="id4">Gender:</label><br>
-        <input id="id4" type="text" class="form-control form-control-sm"  placeholder="Enter 'm' for Male OR 'f' for Female" required><br><br>
+        <label for="gender">Gender:</label><br>
+        <input id="gender" type="text" class="form-control form-control-sm"   placeholder="Enter 'm' for Male OR 'f' for Female" required>
+        <option value="male">
+            <option value="female">
+        <br><br>
     </div>
     </div>
 
     <div class="form-row">
         <div class="col-md-2 mb-3">
-            <label for="id1">Day of birth:</label><br>
-            <input id="id1" type="number" class="form-control form-control-sm" placeholder="Date" min="1" max="31" required><br><br>
+            <label for="day">Day of birth:</label><br>
+            <input id="day" type="number" class="form-control form-control-sm" placeholder="Date" min="1" max="31" required><br><br>
         </div>
 
         <div class="col-md-2 mb-3">
-            <label for="id2">Month of birth:</label><br>
-            <input id="id2" type="number" class="form-control form-control-sm" placeholder="Month" min="1" max="12" required><br><br>
+            <label for="month">Month of birth:</label><br>
+            <input id="month" type="number" class="form-control form-control-sm" placeholder="Month" min="1" max="12" required><br><br>
         </div>
    
         <div class="col-md-2 mb-3">
-            <label for="id3">Year of birth:</label><br>
-            <input id="id3" type="number" class="form-control form-control-sm" placeholder="Year (enter 4 digits)" min="1900" max="2020" required><br><br>
+            <label for="year">Year of birth:</label><br>
+            <input id="year" type="number" class="form-control form-control-sm" placeholder="Year (enter 4 digits)" min="1900" max="2020" required><br><br>
         </div>
     </div>
 
-    <button id="btn"  class="btn btn-danger navbar-btn" type="submit">Generate Name!</button>
+    <button id="btn"  class="btn btn-danger navbar-btn" onclick="getData()" type="submit">Generate Name!</button>
     <br><br>
     <h6><strong>If the date entered is incorrect, an error message will be displayed.</strong></h6>
 </form>
 </div>
+
+month<input type="text" id="month">
+year<input type="text" id="year">
+<button onclick="calculate()" type="submit">calc</button>
+
 
 </div>
 </div>
@@ -94,29 +102,46 @@ p{
 
 <script>
 
-//validate data entered
-    var DD = document.getElementById("id1");
-    var MM = document.getElementById("id2");
-    var year = document.getElementById("id3");
-    var gender = document.getElementById("id4");
 
+function myFunction() {
+        var DD = document.getElementById("id1");
         if (!DD.checkValidity()) {
             document.getElementById("demo").innerHTML = DD.validationMessage;
         } else {
             document.getElementById("demo").innerHTML = "Input OK";
         } 
-
+        var MM = document.getElementById("id2");
         if (!MM.checkValidity()) {
             document.getElementById("demo").innerHTML = MM.validationMessage;
         } else {
             document.getElementById("demo").innerHTML = "Input OK";
         } 
-
+        var year = document.getElementById("id3");
         if (!year.checkValidity()) {
             document.getElementById("demo").innerHTML = year.validationMessage;
         } else {
             document.getElementById("demo").innerHTML = "Input OK";
         } 
+        var gender = document.getElementById("id4");
+        if (!gender.checkValidity()) {
+            document.getElementById("demo").innerHTML = year.validationMessage;
+        } else {
+            document.getElementById("demo").innerHTML = "Input OK";
+        } 
+
+
+
+
+
+    }
+
+
+
+  //  var akan = function(DD, MM, Year, gender) {
+//return  dow= ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) %7;
+//};
+
+
     //end of validate data entered
     
     //Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
@@ -128,17 +153,39 @@ p{
 
     //dayOfWeek = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
        
-  
-        document.getElementById("btn").addEventListener("click", function(event){
-        event.preventDefault()
-        });
-        let profile = {
-        one : document.getElementById("id1").value,
-        two : document.getElementById("id2").value,
-        }
-        console.log(profile);
-        alert("hi");
+       // document.getElementById("btn").addEventListener("click", function(event){
+        //event.preventDefault()
+       // });
+
+    //    let profile = {
+      // DD : document.getElementById("id1").value,
+    //MM : document.getElementById("id2").value,
+      //  year : document.getElementById("id3").value,
+        //gender : document.getElementById("id4").value
+        //}
+       //console.log(profile);
+        
        // let profiles = [];
+
+       // var add = function(number1, number2) {
+       // return number1 + number2;
+       // };
+
+//var number1 = number(document.getElementById("id1").value);
+//var number2 = number(document.getElementById("id2").value);
+//var result = add(number1, number2);
+//alert(result);
+
+function getData(){
+        var data = [];
+        data[0] = document.getElementsByName('id1')[0].value;
+        data[1] = document.getElementsByName('id2')[0].value;
+        data[2] = document.getElementsByName('id3')[0].value;
+        console.log(data); // Check the console for the values for every click.
+    return data;   
+    }
+
+    var x = getData(); // When this is executed there will be no values in the input.
 
 
 
