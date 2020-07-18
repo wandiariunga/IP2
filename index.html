@@ -56,175 +56,117 @@ p{
 <!--HTML form tag  -->
 <p id="demo"></p>
 <div class=main>
-    <form>
-      
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-        <label for="gender">Gender:</label><br>
-        <input id="gender" type="text" class="form-control form-control-sm"   placeholder="Enter 'm' for Male OR 'f' for Female" required>
-        <option value="male">
-            <option value="female">
+
+    <form action="" method="GET">
+       
+    <div class="form-row">
+    <div class="col-md-4 mb-3">
+    <label for="gender">Gender:</label><br>
+    <input id="gender" type="text" class="form-control form-control-sm" placeholder="Enter 'male' for Male OR 'female' for Female" required/>
+    <option value="male">
+    <option value="female">
         <br><br>
     </div>
     </div>
 
     <div class="form-row">
-        <div class="col-md-2 mb-3">
-            <label for="day">Day of birth:</label><br>
-            <input id="day" type="number" class="form-control form-control-sm" placeholder="Date" min="1" max="31" required><br><br>
-        </div>
-
-        <div class="col-md-2 mb-3">
-            <label for="month">Month of birth:</label><br>
-            <input id="month" type="number" class="form-control form-control-sm" placeholder="Month" min="1" max="12" required><br><br>
-        </div>
-   
-        <div class="col-md-2 mb-3">
-            <label for="year">Year of birth:</label><br>
-            <input id="year" type="number" class="form-control form-control-sm" placeholder="Year (enter 4 digits)" min="1900" max="2020" required><br><br>
-        </div>
+    <div class="col-md-2 mb-3">
+    <label for="day">Day of birth:</label><br>
+    <input id="day" type="number" class="form-control form-control-sm" placeholder="Date" min="1" max="31" required/><br><br>
     </div>
 
-    <button id="btn"  class="btn btn-danger navbar-btn" onclick="getData()" type="submit">Generate Name!</button>
+    <div class="col-md-2 mb-3">
+    <label for="month">Month of birth:</label><br>
+    <input id="month" type="number" class="form-control form-control-sm" placeholder="Month" min="1" max="12" required/><br><br>
+    </div>
+   
+    <div class="col-md-2 mb-3">
+    <label for="year">Year of birth:</label><br>
+    <input id="year" type="number" class="form-control form-control-sm" placeholder="Year (enter 4 digits)" min="1900" max="2020" required/><br><br>
+    </div>
+    </div>
+
+    <input id="btn"  class="btn btn-danger navbar-btn" value="Submit" type="button"/>
     <br><br>
+</div>
+    
     <h6><strong>If the date entered is incorrect, an error message will be displayed.</strong></h6>
+
 </form>
-</div>
 
-month<input type="text" id="month">
-year<input type="text" id="year">
-<button onclick="calculate()" type="submit">calc</button>
-
-
-</div>
-</div>
-</div>
 
 <script>
 
 
 function myFunction() {
-        var DD = document.getElementById("id1");
-        if (!DD.checkValidity()) {
-            document.getElementById("demo").innerHTML = DD.validationMessage;
-        } else {
-            document.getElementById("demo").innerHTML = "Input OK";
-        } 
-        var MM = document.getElementById("id2");
-        if (!MM.checkValidity()) {
-            document.getElementById("demo").innerHTML = MM.validationMessage;
-        } else {
-            document.getElementById("demo").innerHTML = "Input OK";
-        } 
-        var year = document.getElementById("id3");
-        if (!year.checkValidity()) {
-            document.getElementById("demo").innerHTML = year.validationMessage;
-        } else {
-            document.getElementById("demo").innerHTML = "Input OK";
-        } 
-        var gender = document.getElementById("id4");
-        if (!gender.checkValidity()) {
-            document.getElementById("demo").innerHTML = year.validationMessage;
-        } else {
-            document.getElementById("demo").innerHTML = "Input OK";
-        } 
-
-
-
-
-
-    }
-
-
-
-  //  var akan = function(DD, MM, Year, gender) {
-//return  dow= ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) %7;
-//};
-
-
-    //end of validate data entered
+    let n =document.getElementById("day").value;
+    document.getElementById("demo").innerHTML= n; 
     
-    //Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
-    //CC - is the century digits. For example 1989 has CC = 19
-    //YY - is the Year digits (1989 has YY = 89)
-    //MM -  is the Month
-    //DD - is the Day of the month 
-    //mod - is the modulus function ( % )
+        //var DD = document.getElementById("id1");
+        //if (!DD.checkValidity()) {
+          //  document.getElementById("demo").innerHTML = DD.validationMessage;
+        //} else {
+         //   document.getElementById("demo").innerHTML = "Input OK";
+        //} 
+        //var MM = document.getElementById("id2");
+        //if (!MM.checkValidity()) {
+        //    document.getElementById("demo").innerHTML = MM.validationMessage;
+        //} else {
+        //    document.getElementById("demo").innerHTML = "Input OK";
+        //} 
+        //var year = document.getElementById("id3");
+        //if (!year.checkValidity()) {
+        //    document.getElementById("demo").innerHTML = year.validationMessage;
+        //} else {
+        //    document.getElementById("demo").innerHTML = "Input OK";
+        //} 
+        //var gender = document.getElementById("id4");
+        //if (!gender.checkValidity()) {
+        //    document.getElementById("demo").innerHTML = year.validationMessage;
+        //} else {
+        //    document.getElementById("demo").innerHTML = "Input OK";
+        //} 
 
-    //dayOfWeek = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
-       
-       // document.getElementById("btn").addEventListener("click", function(event){
-        //event.preventDefault()
-       // });
+        //var gen = document.getElementById("gender").value;
+        //var field1 = document.getElementById("day").value;
+        //var field2 = document.getElementById("month").value;
+        //var field3 = document.getElementById("year").value;
+        //var field4 = document.getElementById("year").value;
+        //var field5 = field4[0]+field4[1];
+        //var field6 = field4[2]+field4[3];
+        //var result =parseInt(field1)+parseInt(field2)+parseInt(field5)+parseInt(field6); 
+       //dayofWeekx  = Math.round(((field5/4) -2*field5-1) + ((5*field6/4) ) + ((26*(field2+1)/10)) + field1 );
+        //dayofWeek = dayofWeekx%7;
 
-    //    let profile = {
-      // DD : document.getElementById("id1").value,
-    //MM : document.getElementById("id2").value,
-      //  year : document.getElementById("id3").value,
-        //gender : document.getElementById("id4").value
-        //}
-       //console.log(profile);
-        
-       // let profiles = [];
+        //let names = [{"gender":"male", "tarehe":0, "akan":"Kwasi"},
+        //{"gender":"male", "tarehe":1, "akan":"Kwadwo"},
+        //{"gender":"male", "tarehe":2, "akan":"Kwabena"},
+        //{"gender":"male", "tarehe":3, "akan":"Kwaku"},
+        //{"gender":"male", "tarehe":4, "akan":"Yao"},
+        //{"gender":"male", "tarehe":5, "akan":"Kofi"},
+        //{"gender":"male", "tarehe":6, "akan":"Kwame"},
+        //{"gender":"female", "tarehe":0, "akan":"Akosua"},
+        //{"gender":"female", "tarehe":1, "akan":"Adwoa"},
+        //{"gender":"female", "tarehe":2, "akan":"Abeenaa"},
+        //{"gender":"female", "tarehe":3, "akan":"Akua"},
+        //{"gender":"female", "tarehe":4, "akan":"Yaa"},
+        //{"gender":"female", "tarehe":5, "akan":"Afua"},
+        //{"gender":"female", "tarehe":6, "akan":"Ama"}
+        //]
 
-       // var add = function(number1, number2) {
-       // return number1 + number2;
-       // };
+        //let name = names.find(name => name.gender === gen && name.tarehe === dayofWeek);
 
-//var number1 = number(document.getElementById("id1").value);
-//var number2 = number(document.getElementById("id2").value);
-//var result = add(number1, number2);
-//alert(result);
+        //document.getElementById("demo").innerHTML= gen;
 
-function getData(){
-        var data = [];
-        data[0] = document.getElementsByName('id1')[0].value;
-        data[1] = document.getElementsByName('id2')[0].value;
-        data[2] = document.getElementsByName('id3')[0].value;
-        console.log(data); // Check the console for the values for every click.
-    return data;   
-    }
+//  if(!isNaN(result))
+ //  {
+ //   document.getElementById("demo").innerHTML="The day of birth falls on the "+ dayofWeek+" day of the week, calculated as mod 7 of  " + dayofWeekx + " .The formula results in the number " +result + " which takes into consideration the first two digits of the year " + field5 + " and the last two digits of the year " + field6 + " of the gender " + gen +". Your Akan name is " + name["akan"];
+   //}
 
-    var x = getData(); // When this is executed there will be no values in the input.
+ }
+  
 
-
-
-       // const addProfile = (ev)=>{
-         //   ev.preventDefault();  //to stop the form submitting
-           // let profile = {
-        //one : document.getElementById("id1").value,
-        //two : document.getElementById("id2").value,
-           // }
-          //  profiles.push(profile);
-            //document.forms[0].reset(); // to clear the form for the next entries
-            //document.querySelector('form').reset();
-
-            //for display purposes only
-          //  console.warn('added',{profiles} );
-           // let pre = document.querySelector('#msg pre');
-            //pre.textContent = '\n' + JSON.stringify(profiles, '\t', 2);
-
-
-            //saving to localStorage
-            //localStorage.setItem('MyProfileList', JSON.stringify(profiles) );
-     //   }
-      //  document.addEventListener('DOMContentLoaded', ()=>{
-        //    document.getElementById('btn').addEventListener('click', addProfile);
-       // });
-    
-
-
-//if (temperature < 0) {
-//  console.log("Brr! Don't freeze out there!");
-//} else if (temperature < 15) {
-//  console.log("Don't forget a jacket!");
-//} else if (temperature < 25) {
-//  console.log("Have a nice day :)");
-//} else {
-//  console.log("Keep cool today!");
-//}
-
-
+document.getElementById("btn").addEventListener("click", myFunction);
 </script>
 
  </body>
