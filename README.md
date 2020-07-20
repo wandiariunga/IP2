@@ -2,8 +2,9 @@
 #### Name generator form, July 2020
 #### By **Wandia Riunga ,Nairobi**
 ## Description
-https://wandiariunga.github.io/IP2/
-Name geneerator amchine that outputs Akan name
+live site: https://wandiariunga.github.io/IP2/
+
+Name generator machine that outputs Akan name
 ## Setup/Installation Requirements
 * Install Ubuntu
 * Install GIT
